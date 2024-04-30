@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Players</title>
+  <style>
+    body {
+      background-color: #4AC1CB; /* A neutral off-white background color */
+      font-family: Arial, sans-serif; /* Ensures text is in a readable font */
+      margin: 0; /* Removes default margin */
+      padding: 20px; /* Adds padding around the content inside the body */
+    }
+    table {
+      width: 100%; /* Makes the table stretch to the full width of its container */
+      border-collapse: collapse; /* Removes space between borders */
+    }
+    th, td {
+      padding: 8px; /* Adds padding inside table cells */
+      border: 1px solid #ccc; /* Gives a subtle border to the table cells */
+    }
+    th {
+      background-color: #007bff; /* A solid color for header cells */
+      color: white; /* White text for contrast against the header background */
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9; /* Zebra stripes for rows */
+    }
+  </style>
+</head>
+<body>
+  <h1>Top Players</h1>
+  <!-- Check if the userBetList is empty -->
+  <th:block th:if="${#lists.isEmpty(userBetList)}">
+    <p>No top players found.</p>
+  </th:block>
+  <th:block th:unless="${#lists.isEmpty(userBetList)}">
+    <table>
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Timing</th>
+          <th>Venue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iterate over the top 5 records -->
+        <tr th:each="player : ${userBetList}">
+          <td th:text="${player.userId}"></td>
+          <td th:text="${player.timing}"></td>
+          <td th:text="${player.venue}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </th:block>
+</body>
+</html>

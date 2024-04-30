@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #4AC1CB; /* Changed from image to a solid color for consistency */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px; /* Set a max-width for the form */
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            float: left;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: .375rem .75rem;
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+        }
+        button {
+            background-color: #004085;
+            border-color: #004085;
+            color: white;
+            padding: .375rem .75rem;
+            border-radius: .25rem;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #004085;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm" action="/login" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control">
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Match Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Match Result</h1>
+        <p>Team 1: <span th:text="${matchResult.team1Name}"></span></p>
+        <p>Team 2: <span th:text="${matchResult.team2Name}"></span></p>
+        <p>Date: <span th:text="${matchResult.matchDate}"></span></p>
+        <p>Venue: <span th:text="${matchResult.venueName}"></span></p>
+		<a href="/enter-scores"><button>Let's Play</button></a>
+    </div>
+</body>
+</html>

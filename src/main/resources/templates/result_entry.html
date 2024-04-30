@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Details</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif; /* Ensures text is in a readable font */
+      background-color: #2187a3; /* Light gray background for less strain on the eyes */
+      color: #333; /* Dark gray color for text for better readability */
+      margin: 0;
+      padding: 20px; /* Adds space around the content */
+    }
+
+    h1, h2 {
+      text-align: center; /* Centers your headers */
+      color: #000810; /* Gives a blue color to headers for distinction */
+    }
+
+    p {
+      text-align: center;
+      font-size: 16px; /* Sets a reasonable font size for paragraph text */
+      margin: 10px 0; /* Adds vertical spacing between paragraphs */
+    }
+
+    span {
+      font-weight: bold; /* Makes the spanned text bold to highlight data */
+    }
+  </style>
+</head>
+<body>
+	<h1>Match Details</h1>
+	 
+	 <h2>Your Details</h2>
+	 <p>User ID: <span th:text="${loggedInPlayer != null ? loggedInPlayer.getid() : 'N/A'}">N/A</span></p>
+	 <p>Name: <span th:text="${loggedInPlayer != null ? loggedInPlayer.getusername() : 'N/A'}">N/A</span></p>
+	 
+	 <h2>Opponent Details</h2>
+	 <p>User ID: <span th:text="${opponentPlayer != null ? opponentPlayer.getid() : 'N/A'}">N/A</span></p>
+	 <p>Name: <span th:text="${opponentPlayer != null ? opponentPlayer.getusername() : 'N/A'}">N/A</span></p>
+	
+	 <!-- Form for entering set scores -->
+	 <form action="/submitScore" method="post">
+	   <h2>Enter Set Scores</h2>
+	   <label for="yourScore">Your Score:</label>
+	   <input type="number" id="yourScore" name="yourScore" required><br>
+	   
+	   <label for="opponentScore">Opponent Score:</label>
+	   <input type="number" id="opponentScore" name="opponentScore" required><br>
+	
+	   <!-- Hidden fields to pass player IDs -->
+	   <input type="hidden" name="loggedInPlayerId" th:value="${loggedInPlayer != null ? loggedInPlayer.getid() : ''}">
+	   <input type="hidden" name="opponentPlayerId" th:value="${opponentPlayer != null ? opponentPlayer.getid() : ''}">
+	   
+	   <button type="submit">Submit Scores</button>
+	 </form>
+
+</body>
+</html>

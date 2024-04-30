@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Welcome to Sports Matchmaking</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        html, body {
+            height: 100%; /* ensure full height */
+            margin: 0;
+        }
+        body {
+            background: url('https://www.shutterstock.com/shutterstock/photos/2173787323/display_1500/stock-vector-collection-of-d-sport-and-ball-icon-collection-isolated-on-blue-sport-and-recreation-for-healthy-2173787323.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex; /* use flexbox */
+            justify-content: center; /* center horizontally */
+            align-items: center; /* center vertically */
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+        h3 a {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        h3 a:hover, h3 a:focus {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WELCOME TO SPORTS TEAM MATCHER</h1>
+        
+        <h3><a th:href="@{/register}">Register</a></h3>
+        <h3><a th:href="@{/login1}">Login</a></h3>
+    </div>
+</body>
+</html>

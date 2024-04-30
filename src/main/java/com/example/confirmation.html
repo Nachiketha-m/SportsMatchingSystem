@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation Page</title>
+</head>
+<body>
+    <h1>Confirmation Page</h1>
+    
+    <p>Place: <span th:text="${place}"></span></p>
+    <p>Name: <span th:text="${name}"></span></p>
+    <p>Bet: <span th:text="${bet ? 'Yes' : 'No'}"></span></p>
+</body>
+</html>

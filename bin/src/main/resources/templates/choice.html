@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Preferences</title>
+    <link rel="stylesheet" href="/src/main/resources/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Set Preferences</h1>
+        <form action="/submit" method="post">
+            <div class="container">
+                <h1>Enter Your ID</h1>
+                <div class="form-group">
+                    <label for="userId">Enter Your ID:</label>
+                    <input type="text" id="userId" name="userId" placeholder="Your ID">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="venue">Venue:</label>
+                <select id="venue" name="venue">
+                    <option value="Pes University">Pes University</option>
+                    <option value="Monarch Academy">Monarch Academy</option>
+                    <option value="Torque Academy">Torque Academy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bet">Bet:</label>
+                <select id="bet" name="bet">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timings">Timings:</label>
+                <select id="timings" name="timings">
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Night">Night</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

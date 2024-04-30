@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sports Team Matcher</title>
+    <style>
+		body {
+				          font-family: Arial, sans-serif;
+				          background-color: #f5f5f5;
+				          margin: 0;
+				          padding: 0;
+				      }
+				      .container {
+				          max-width: 800px;
+				          margin: 0 auto;
+				          padding: 20px;
+				          text-align: center;
+				      }
+				      h1 {
+				          color: #333;
+				          margin-bottom: 20px;
+				      }
+				      form {
+				          margin-bottom: 20px;
+				      }
+				      label {
+				          display: block;
+				          margin-bottom: 5px;
+				          font-weight: bold;
+				      }
+				      select, input[type="number"] {
+				          width: 100%;
+				          padding: 8px;
+				          margin-bottom: 10px;
+				          border: 1px solid #ccc;
+				          border-radius: 5px;
+				          box-sizing: border-box;
+				      }
+				      button {
+				          padding: 10px 20px;
+				          background-color: #007bff;
+				          color: #fff;
+				          border: none;
+				          border-radius: 5px;
+				          cursor: pointer;
+				      }
+				      button:hover {
+				          background-color: #0056b3;
+				      }
+				      #matchMessage {
+				          display: none;
+				          text-align: center;
+				          font-size: 24px;
+				          margin-top: 20px;
+				      }
+				      .logo {
+				          width: 100px;
+				          height: 100px;
+				          margin-bottom: 20px;
+				      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="https://www.shutterstock.com/shutterstock/photos/2173787323/display_1500/stock-vector-collection-of-d-sport-and-ball-icon-collection-isolated-on-blue-sport-and-recreation-for-healthy-2173787323.jpg">
+        <h1>Welcome to Sports Team Matcher</h1>
+        <form id="matchForm" action="/match/result" method="post">
+            <label for="sport">Pick a Sport:</label>
+            <select id="sport" name="sport">
+                <option value="football">Football</option>
+                <option value="basketball">Basketball</option>
+                <!-- Add more sports as needed -->
+            </select>
+            <br>
+            <label for="teamSize">Pick the number of people in the team:</label>
+            <input type="number" id="teamSize" name="teamSize" min="1" max="11">
+            <br>
+            <button type="submit">Match</button>
+        </form>
+    </div>
+</body>
+</html>

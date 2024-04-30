@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Preferences</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #4AC1CB; 
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff; /* White background for the form */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333; /* Dark grey color for text */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Bootstrap primary blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Set Preferences</h1>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="userId">Enter Your ID:</label>
+                <input type="text" id="userId" name="userId" placeholder="Your ID">
+            </div>
+            <div class="form-group">
+                <label for="venue">Venue:</label>
+                <select id="venue" name="venue">
+                    <option value="Pes University">Pes University</option>
+                    <option value="Monarch Academy">Monarch Academy</option>
+                    <option value="Torque Academy">Torque Academy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bet">Bet:</label>
+                <select id="bet" name="bet">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timings">Timings:</label>
+                <select id="timings" name="timings">
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Night">Night</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

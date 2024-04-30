@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Players</title>
+</head>
+<body>
+  <h1>Top Players (Venue: <span th:text="${userBet.venue}"></span>, Timings: <span th:text="${userBet.timings}"></span>)</h1>
+  <th:block th:if="${#lists.isEmpty(userBetList)}">
+    <p>No top players found.</p>
+  </th:block>
+  <th:block th:unless="${#lists.isEmpty(userBetList)}">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Timing</th>
+          <th>Venue</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="player : ${userBetList}">
+          <td th:text="${player.userId}"></td>
+          <td th:text="${player.timings}"></td>
+          <td th:text="${player.venue}"></td>
+          <td>
+            <!-- Construct the URL dynamically using Thymeleaf expressions -->
+            <a th:href="@{/resultentry(userId=${userBet.userId},opponentId=${player.userId})}">
+              <button>Play</button>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </th:block>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-image: url('');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(62, 170, 175, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .logo {
+            margin-bottom: 20px;
+            width: 100px; /* Adjust size accordingly */
+        }
+        .form-group label {
+            text-align: left;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <img src="" alt="" class="">
+        <h1>User Registration - Sign Up</h1>
+        <form action="/process_register" method="post" style="max-width: 600px; margin: 0 auto;">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Username</label>
+                    <div class="col-8">
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Password</label>
+                    <div class="col-8">
+                        <input type="password" name="password" class="form-control" required minlength="6" maxlength="10">
+                    </div>
+                </div>
+                
+                <div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
